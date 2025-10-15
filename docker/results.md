@@ -7,6 +7,9 @@
 ### Отправка запроса на веб-сервер в конейнере
 ![image](images/request_result.png)
 
+### Загрузка собранного образа в docker hub
+![image](images/dockerhub_push.png)
+
 
 ## Docker-compose
 ### Запуск docker-compose
