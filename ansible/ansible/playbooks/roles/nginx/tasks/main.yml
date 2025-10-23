@@ -1,0 +1,27 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install nginx
+  apt:
+    name: nginx
+    state: present
+
+- name: Ensure nginx is not managed by systemd
+  systemd:
+    name: nginx
+    enabled: no
+    masked: yes
+  failed_when: false
+
+- name: Configure nginx default site
+  template:
+    src: /home/admin/ansible/playbooks/roles/nginx/templates/default.conf
+    dest: /etc/nginx/sites-available/default
+  notify: restart nginx
+
+- name: Start nginx using service command
+  shell: /usr/sbin/service nginx start
+  register: nginx_start
+  changed_when: "'start' in nginx_start.stdout or 'start' in nginx_start.stderr"

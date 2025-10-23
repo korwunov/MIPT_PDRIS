@@ -1,0 +1,5 @@
+---
+- hosts: ubuntu-host2
+  become: yes
+  roles:
+    - app
