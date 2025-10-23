@@ -1,0 +1,32 @@
+---
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install dependencies
+  apt:
+    name:
+      - python3
+      - python3-pip
+    state: present
+
+- name: Create app directory
+  file:
+    path: /opt/myapp
+    state: directory
+
+- name: Copy application files
+  copy:
+    src: myapp.tar.gz
+    dest: /opt/myapp/
+
+- name: Extract application
+  unarchive:
+    src: /home/admin/ansible/playbooks/roles/app/files/myapp.tar.gz
+    dest: /opt/myapp/
+
+- name: Install python dependencies
+  shell: python3 -m pip install -r /opt/myapp/requirements.txt
+
+- name: Start application
+  shell: nohup python3 /opt/myapp/main.py &&

@@ -1,0 +1,5 @@
+[webservers]
+ubuntu-host1 ansible_host=ubuntu-host1 ansible_ssh_user=admin ansible_ssh_pass=securepassword ansible_become_pass=password
+
+[appservers]
+ubuntu-host2 ansible_host=ubuntu-host2 ansible_ssh_user=admin ansible_ssh_pass=securepassword ansible_become_pass=password
