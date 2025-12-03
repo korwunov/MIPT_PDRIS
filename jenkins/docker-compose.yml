@@ -61,16 +61,16 @@ services:
       - cicd-network
 
   # Nexus Repository - артефакты и зависимости
-  # nexus:
-  #   image: sonatype/nexus3:latest
-  #   container_name: nexus
-  #   restart: unless-stopped
-  #   ports:
-  #     - "8081:8081"
-  #   volumes:
-  #     - nexus_data:/nexus-data
-  #   networks:
-  #     - cicd-network
+  nexus:
+    image: sonatype/nexus3:latest
+    container_name: nexus
+    restart: unless-stopped
+    ports:
+      - "8081:8081"
+    volumes:
+      - nexus_data:/nexus-data
+    networks:
+      - cicd-network
 
   # GitLab - система контроля версий
   #gitlab:
