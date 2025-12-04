@@ -55,3 +55,26 @@
 
 ##### Nexus
 ![image](images/build_job/build_job_nexus_result.png)
+
+### Deploy job
+#### Настройка
+
+##### Установка источника исходного кода job
+![image](images/deploy_job/deploy_job_set_scm_source.png)
+
+##### Настройка параметров job
+![image](images/deploy_job/deploy_job_params.png)
+
+##### Установка плагина для удаленного ssh подключения к хосту
+![image](images/deploy_job/deploy_job_ssh_publisher_install.png)
+
+##### Настройка плагина
+![image](images/deploy_job/deploy_job_ssh_publisher_config.png)
+
+#### Результат
+##### Статус job
+![image](images/deploy_job/deploy_job_result.png)
+
+##### Логи развернутого сервиса на удаленном хосте
+![image](images/deploy_job/deploy_job_remote_host_logs.png)
+Запущено два java процесса, в логах виден успешный старт spring-приложения

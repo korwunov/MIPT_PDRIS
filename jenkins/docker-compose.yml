@@ -136,6 +136,16 @@ services:
       - cicd-network
     ports:
       - "4444:22"
+
+  prod:
+    build: 
+      context: .
+      dockerfile: ./dockerfileUbuntu
+    container_name: prod
+    networks:
+      - cicd-network
+    ports:
+      - "5555:22"
       
   
 volumes:
